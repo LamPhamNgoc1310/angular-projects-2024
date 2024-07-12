@@ -1,0 +1,33 @@
+<div class="weather-app-container">
+  <div class="weather-app-upper">
+    <img
+      src="https://patch.com/img/cdn20/users/22880691/20190711/124251/styles/patch_image/public/heat-hot-weather-shutterstock-80404600___11124221984.jpg?width=1200"
+      alt="Hot Image"
+      *ngIf="!checkTemperature(temp)"
+    />
+    <img
+      src="https://i.pinimg.com/originals/ab/00/be/ab00be27dd8e4082b34d4ccde388c61d.jpg"
+      alt="Cold Image"
+      *ngIf="checkTemperature(temp)"
+    />
+
+    <div class="weather-data">
+      <div class="location">{{city}}</div>
+      <div class="temperature">{{ temp | number : "1.0-0" }}ºC</div>
+    </div>
+  </div>
+  <div class="weather-app-lower">
+    <br>
+    <div class="more-info-label">More information</div>
+    <br />
+    <div class="more-info-container">
+      <div *ngFor="let data of datas; let i = index" [class]="data.className">
+        <div class="left-info">
+          <img [src]="data.img" alt="" />
+          <span>{{ data.label }}</span>
+        </div>
+        <span> {{ data.value }}</span>
+      </div>
+    </div>
+  </div>
+</div>

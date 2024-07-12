@@ -1,0 +1,57 @@
+<div class="todolist">
+  <h1>To-do list app</h1>
+  <hr />
+
+  <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+    <div class="todolistInput">
+      <label for="todolistInput-task">Task</label>
+      <input
+        type="text"
+        class="form-control"
+        id="todolistInput-task"
+        placeholder="Enter task"
+        ngModel
+        name="task"
+        required
+        maxlength="40"
+      />
+      <!-- ask: what is 'dirty' -->
+      <small *ngIf="taskForm.invalid && taskForm.dirty" id="todolistInput-errorMsg" class="form-text text-danger"
+        >Requires something</small
+      >
+      <!-- error msg for max length -->
+      <small *ngIf="taskForm.submitted && taskForm.controls['task'].errors?.['maxlength']" id="todolistInput-errorMsg" class="form-text text-danger"
+        >Tasks cannot exceed 30 characters</small
+      >
+    </div>
+    <button 
+    [disabled]="taskForm.invalid"
+    type="todolist-submit" 
+    class="btn btn-primary"
+    >Add task</button>
+  </form>
+
+  <hr />
+
+  <table class="todolistTable">
+    <thead>
+      <tr>
+        <th scope="col">Task</th>
+        <th scope="col">Completed</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- this code below is like mapping but using loops -->
+      <tr *ngFor="let t of taskArray; index as i">
+        <td>{{ t.taskName }}</td>
+        <td><input (change)="onCheck(i)" id="todolistTable-checkbox" type="checkbox" /></td>
+        <td>
+          <button class="todolistTable-deleteBtn" (click)="onDelete(i)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,6 @@
+hot: https://patch.com/img/cdn20/users/22880691/20190711/124251/styles/patch_image/public/heat-hot-weather-shutterstock-80404600___11124221984.jpg
+cold: https://i.pinimg.com/originals/ab/00/be/ab00be27dd8e4082b34d4ccde388c61d.jpg
+high: https://cdn-icons-png.freepik.com/512/7512/7512513.png
+low: https://cdn-icons-png.freepik.com/512/7512/7512501.png
+humid: https://cdn-icons-png.flaticon.com/512/2828/2828802.png
+wind: https://cdn-icons-png.freepik.com/512/414/414975.png?ga=GA1.1.1805912274.1719994736
