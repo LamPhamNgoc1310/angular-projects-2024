@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "XOApp": {
+    "myXOApp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/xoapp",
+            "outputPath": "dist/my-xoapp",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,7 +62,8 @@
                   "maximumError": "4kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "serviceWorker": "ngsw-config.json"
             },
             "development": {
               "optimization": false,
@@ -76,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "XOApp:build:production"
+              "buildTarget": "myXOApp:build:production"
             },
             "development": {
-              "buildTarget": "XOApp:build:development"
+              "buildTarget": "myXOApp:build:development"
             }
           },
           "defaultConfiguration": "development"
